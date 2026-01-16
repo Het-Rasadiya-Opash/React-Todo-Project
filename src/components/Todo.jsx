@@ -4,9 +4,13 @@ import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
 import TodoDate from "./TodoDate";
 import TodoClearAll from "./TodoClearAll";
+import {
+  getLocalStorageTodoData,
+  setLocalStorageTodoData,
+} from "./TodoLocalStorage";
 
 const Todo = () => {
-  const [task, setTask] = useState([]);
+  const [task, setTask] = useState(() => getLocalStorageTodoData());
 
   const handleFormSubmit = (inputValue) => {
     const { id, content, checked } = inputValue;
@@ -20,6 +24,8 @@ const Todo = () => {
 
     setTask((prevTask) => [...prevTask, { id, content, checked }]);
   };
+
+  setLocalStorageTodoData(task);
 
   const handleDeleteTodo = (value) => {
     const updatedTask = task.filter((curTask) => curTask.content !== value);
