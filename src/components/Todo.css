@@ -1,0 +1,201 @@
+
+/* MAIN CONTAINER */
+.todo-container {
+  min-height: 100vh;
+  width: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(120deg, #001214, #001f29);
+  color: #ffffff;
+}
+
+/* HEADER */
+.header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+/* FORM SECTION */
+.form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+form {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+}
+
+/* INPUT */
+.todo-input {
+  flex: 1;
+  padding: 1.2rem 1.6rem;
+  font-size: 1.6rem;
+  border: none;
+  outline: none;
+  border-top-left-radius: 1.2rem;
+  border-bottom-left-radius: 1.2rem;
+  background-color: #f2f3f4;
+  color: #1c2833;
+}
+
+.todo-input::placeholder {
+  color: #7f8c8d;
+}
+
+.todo-input:focus {
+  box-shadow: 0 0 0 3px rgba(93, 173, 226, 0.5);
+}
+
+/* ADD BUTTON */
+.todo-btn {
+  padding: 1.2rem 2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  border-top-right-radius: 1.2rem;
+  border-bottom-right-radius: 1.2rem;
+  background-color: #5dade2;
+  color: #ffffff;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.todo-btn:hover {
+  background-color: #3498db;
+}
+
+.todo-btn:active {
+  transform: scale(0.95);
+}
+
+/* TODO LIST WRAPPER */
+.myUnOrdList {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* TODO LIST */
+.todo-list {
+  list-style: none;
+  width: 100%;
+  max-width: 700px;
+}
+
+/* TODO ITEM */
+.todo-item {
+  background-color: #f2f3f4;
+  color: #1c2833;
+  border-radius: 1.6rem;
+  padding: 1.6rem 2rem;
+  margin: 1.6rem 0;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 1.6rem;
+  word-break: break-word;
+}
+
+/* TODO TEXT */
+.todo-item span {
+  max-width: 100%;
+}
+
+/* CHECK & DELETE BUTTONS */
+.check-btn,
+.delete-btn {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.check-btn {
+  background-color: #2ecc71;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+}
+
+/* COMPLETED TASK */
+.checkList {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.notCheckList {
+  text-decoration: none;
+}
+
+/* CLEAR BUTTON */
+.clear-btn {
+  margin-top: 2rem;
+  background-color: #e74c3c;
+  color: #ffffff;
+  border: none;
+  font-size: 1.6rem;
+  padding: 1rem 2.4rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+}
+
+.clear-btn:hover {
+  background-color: #c0392b;
+}
+
+/* ========================= */
+/* RESPONSIVE DESIGN */
+/* ========================= */
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 3.2rem;
+  }
+
+  .todo-item {
+    font-size: 1.5rem;
+    padding: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  form {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .todo-input {
+    border-radius: 1.2rem;
+  }
+
+  .todo-btn {
+    width: 100%;
+    border-radius: 1.2rem;
+  }
+
+  .todo-item {
+    grid-template-columns: 1fr auto auto;
+    font-size: 1.4rem;
+  }
+}
